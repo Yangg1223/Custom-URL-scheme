@@ -29,6 +29,7 @@
   }
 
   document.addEventListener("deviceready", triggerOpenURL, false);
+  document.addEventListener("resume", triggerOpenURL, false);
 
   var launchmyapp = {
     getLastIntent: function(success, failure) {
