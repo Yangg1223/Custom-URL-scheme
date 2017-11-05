@@ -12,7 +12,7 @@
           "LaunchMyApp",
           "clearIntent",
           []);
-
+      console.log("get excuted in JS triggerOpenURL 2")
       window.handleOpenURL(url);
     } else if (remainingAttempts-- > 0) {
       setTimeout(function(){waitForAndCallHandlerFunction(url);}, 500);
@@ -20,6 +20,7 @@
   }
 
   function triggerOpenURL() {
+    console.log("get excuted in JS triggerOpenURL 1")
     cordova.exec(
         waitForAndCallHandlerFunction,
         null,
