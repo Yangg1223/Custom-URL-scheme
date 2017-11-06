@@ -36,12 +36,14 @@ public class LaunchMyApp extends CordovaPlugin {
 
   @Override
   public void initialize(final CordovaInterface cordova, CordovaWebView webView){
+    Log.d("custom-url-schema", "*** get here 1");
     this.resetIntent = preferences.getBoolean("resetIntent", false) ||
         preferences.getBoolean("CustomURLSchemePluginClearsAndroidIntent", false);
   }
 
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+    Log.d("custom-url-schema", "*** get here 2");
     if (ACTION_CLEARINTENT.equalsIgnoreCase(action)) {
       final Intent intent = ((CordovaActivity) this.webView.getContext()).getIntent();
       if (resetIntent){
@@ -73,6 +75,7 @@ public class LaunchMyApp extends CordovaPlugin {
 
   @Override
   public void onNewIntent(Intent intent) {
+    Log.d("custom-url-schema", "*** get here 3");
     final String intentString = intent.getDataString();
     if (intentString != null && intent.getScheme() != null) {
       if (resetIntent){

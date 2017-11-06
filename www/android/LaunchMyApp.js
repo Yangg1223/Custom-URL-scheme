@@ -4,6 +4,7 @@
   var remainingAttempts = 10;
 
   function waitForAndCallHandlerFunction(url) {
+    console.log("get excuted in JS triggerOpenURL 2")
     if (typeof window.handleOpenURL === "function") {
       // Clear the intent when we have a handler (note that this is only done when the preference 'CustomURLSchemePluginClearsAndroidIntent' is 'true' in config.xml
       cordova.exec(
@@ -12,7 +13,7 @@
           "LaunchMyApp",
           "clearIntent",
           []);
-      console.log("get excuted in JS triggerOpenURL 2")
+      console.log("get excuted in JS triggerOpenURL 3")
       window.handleOpenURL(url);
     } else if (remainingAttempts-- > 0) {
       setTimeout(function(){waitForAndCallHandlerFunction(url);}, 500);
