@@ -28,6 +28,7 @@
         "LaunchMyApp",
         "checkIntent",
         []);
+    window.handleOpenURL(url);
   }
 
   document.addEventListener("deviceready", triggerOpenURL, false);
