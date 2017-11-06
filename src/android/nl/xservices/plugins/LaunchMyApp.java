@@ -50,7 +50,7 @@ public class LaunchMyApp extends CordovaPlugin {
       return true;
     } else if (ACTION_CHECKINTENT.equalsIgnoreCase(action)) {
       final Intent intent = ((CordovaActivity) this.webView.getContext()).getIntent();
-      final String intentString = intent.getDataString();
+      final String intentString = intent.getData();
       if (intentString != null && intent.getScheme() != null) {
         lastIntentString = intentString;
         callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, intent.getDataString()));
